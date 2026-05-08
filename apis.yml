@@ -1,23 +1,76 @@
 aid: mlflow
 url: https://raw.githubusercontent.com/api-evangelist/mlflow/refs/heads/main/apis.yml
 name: MLflow
-x-type: company
+x-type: opensource
 description: >-
-  MLflow is an open-source platform for managing the end-to-end ML lifecycle: tracking, projects, model registry, deployment, and (newer) GenAI tracing.
+  MLflow is an Apache 2.0 open-source platform for the end-to-end ML and GenAI
+  lifecycle: tracking, model registry, deployment, evaluation, traces, prompts, and
+  GenAI gateway. The tracking server exposes a REST API under `/api/2.0/mlflow`.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - ML
   - MLOps
-  - Open Source
+  - GenAI
   - Experiment Tracking
-  - Model Registry
+  - Open Source
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: mlflow:mlflow-tracking-rest-api
+    name: MLflow REST API
+    humanURL: https://mlflow.org/docs/latest/rest-api.html
+    baseURL: http://{tracking_server}/api/2.0/mlflow
+    tags:
+      - REST
+      - Experiments
+      - Runs
+      - Model Registry
+      - Artifacts
+    description: >-
+      The MLflow tracking server exposes a REST API for experiments, runs, parameters,
+      metrics, tags, registered models, model versions, model aliases, and artifacts,
+      plus newer endpoints for traces, prompts, datasets, and the AI gateway. POST
+      requests use `application/json`. Pagination via `max_results` / `page_token`.
+      Authentication is deployment-specific (basic auth, OIDC, or none).
+    properties:
+      - type: Documentation
+        url: https://mlflow.org/docs/latest/rest-api.html
+      - type: SDK
+        title: Python (mlflow)
+        url: https://mlflow.org/docs/latest/python_api/index.html
+      - type: SDK
+        title: Java
+        url: https://mlflow.org/docs/latest/java_api/index.html
+      - type: SDK
+        title: R
+        url: https://mlflow.org/docs/latest/R-api.html
+  - aid: mlflow:mlflow-gateway-api
+    name: MLflow AI Gateway API
+    humanURL: https://mlflow.org/docs/latest/llms/gateway/index.html
+    baseURL: http://{gateway}/gateway
+    tags:
+      - GenAI
+      - LLM Gateway
+      - REST
+    description: >-
+      The MLflow AI Gateway provides a unified HTTP interface to LLM providers with
+      routing, rate-limiting, and secret management features.
+    properties:
+      - type: Documentation
+        url: https://mlflow.org/docs/latest/llms/gateway/index.html
 common:
   - type: Website
     url: https://mlflow.org/
+  - type: Portal
+    url: https://mlflow.org/docs/latest/
+  - type: SourceCode
+    url: https://github.com/mlflow/mlflow
+  - type: License
+    url: https://github.com/mlflow/mlflow/blob/master/LICENSE.txt
+  - type: CommercialOffering
+    title: Databricks Managed MLflow
+    url: https://www.databricks.com/product/managed-mlflow
   - type: Plans
     url: plans/mlflow-plans-pricing.yml
   - type: RateLimits
