@@ -1,0 +1,29 @@
+aid: mlflow
+url: https://raw.githubusercontent.com/api-evangelist/mlflow/refs/heads/main/apis.yml
+name: MLflow
+x-type: company
+description: >-
+  MLflow is an open-source platform for managing the end-to-end ML lifecycle: tracking, projects, model registry, deployment, and (newer) GenAI tracing.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - ML
+  - MLOps
+  - Open Source
+  - Experiment Tracking
+  - Model Registry
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://mlflow.org/
+  - type: Plans
+    url: plans/mlflow-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/mlflow-rate-limits.yml
+  - type: FinOps
+    url: finops/mlflow-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
