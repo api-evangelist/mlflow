@@ -1,7 +1,7 @@
 aid: mlflow
 url: https://raw.githubusercontent.com/api-evangelist/mlflow/refs/heads/main/apis.yml
 name: MLflow
-x-type: opensource
+kind: opensource
 description: >-
   MLflow is an Apache 2.0 open-source platform for the end-to-end ML and GenAI
   lifecycle: tracking, model registry, deployment, evaluation, traces, prompts, and
