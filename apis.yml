@@ -60,6 +60,8 @@ apis:
       - type: Documentation
         url: https://mlflow.org/docs/latest/llms/gateway/index.html
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/mlflow-org
   - type: Website
     url: https://mlflow.org/
   - type: Portal
