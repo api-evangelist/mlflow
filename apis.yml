@@ -79,6 +79,8 @@ common:
     url: rate-limits/mlflow-rate-limits.yml
   - type: FinOps
     url: finops/mlflow-finops.yml
+  - type: LLMsTxt
+    url: https://mlflow.org/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
