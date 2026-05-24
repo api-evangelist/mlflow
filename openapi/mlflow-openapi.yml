@@ -1,0 +1,527 @@
+openapi: 3.1.0
+info:
+  title: MLflow Tracking REST API
+  version: "2.0"
+  summary: REST API for the MLflow tracking server, model registry, and metrics.
+  description: |
+    MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
+    The tracking server exposes REST endpoints under `/api/2.0/mlflow` for
+    experiments, runs, metrics, parameters, artifacts, and the model registry.
+    See https://mlflow.org/docs/latest/rest-api.html
+  contact:
+    name: MLflow
+    url: https://mlflow.org/
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: http://localhost:5000
+    description: Default local MLflow tracking server
+  - url: https://{host}
+    description: Self-hosted MLflow tracking server
+    variables:
+      host:
+        default: mlflow.example.com
+        description: Hostname of the MLflow tracking server
+security:
+  - {}
+  - basicAuth: []
+tags:
+  - name: Experiments
+    description: Manage MLflow experiments.
+  - name: Runs
+    description: Create and manage runs within an experiment.
+  - name: Metrics
+    description: Log and retrieve metric history for runs.
+  - name: Artifacts
+    description: List and obtain presigned URLs for run artifacts.
+  - name: Registered Models
+    description: Manage registered models in the MLflow Model Registry.
+  - name: Model Versions
+    description: Manage versions of registered models.
+paths:
+  /api/2.0/mlflow/experiments/create:
+    post:
+      tags: [Experiments]
+      summary: Create experiment
+      operationId: createExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name:
+                  type: string
+                artifact_location:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        "200":
+          description: Experiment created
+  /api/2.0/mlflow/experiments/search:
+    post:
+      tags: [Experiments]
+      summary: Search experiments
+      operationId: searchExperiments
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                max_results:
+                  type: integer
+                filter:
+                  type: string
+                order_by:
+                  type: array
+                  items:
+                    type: string
+                page_token:
+                  type: string
+      responses:
+        "200":
+          description: Search results
+  /api/2.0/mlflow/experiments/get:
+    get:
+      tags: [Experiments]
+      summary: Get experiment
+      operationId: getExperiment
+      parameters:
+        - in: query
+          name: experiment_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Experiment object
+  /api/2.0/mlflow/experiments/get-by-name:
+    get:
+      tags: [Experiments]
+      summary: Get experiment by name
+      operationId: getExperimentByName
+      parameters:
+        - in: query
+          name: experiment_name
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Experiment object
+  /api/2.0/mlflow/experiments/delete:
+    post:
+      tags: [Experiments]
+      summary: Delete experiment
+      operationId: deleteExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [experiment_id]
+              properties:
+                experiment_id:
+                  type: string
+      responses:
+        "200":
+          description: Experiment deleted
+  /api/2.0/mlflow/experiments/restore:
+    post:
+      tags: [Experiments]
+      summary: Restore experiment
+      operationId: restoreExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [experiment_id]
+              properties:
+                experiment_id:
+                  type: string
+      responses:
+        "200":
+          description: Experiment restored
+  /api/2.0/mlflow/experiments/update:
+    post:
+      tags: [Experiments]
+      summary: Update experiment
+      operationId: updateExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [experiment_id]
+              properties:
+                experiment_id:
+                  type: string
+                new_name:
+                  type: string
+      responses:
+        "200":
+          description: Experiment updated
+  /api/2.0/mlflow/runs/create:
+    post:
+      tags: [Runs]
+      summary: Create run
+      operationId: createRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                experiment_id:
+                  type: string
+                start_time:
+                  type: integer
+                tags:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        "200":
+          description: Run created
+  /api/2.0/mlflow/runs/update:
+    post:
+      tags: [Runs]
+      summary: Update run
+      operationId: updateRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id]
+              properties:
+                run_id:
+                  type: string
+                status:
+                  type: string
+                end_time:
+                  type: integer
+      responses:
+        "200":
+          description: Run updated
+  /api/2.0/mlflow/runs/get:
+    get:
+      tags: [Runs]
+      summary: Get run
+      operationId: getRun
+      parameters:
+        - in: query
+          name: run_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Run object
+  /api/2.0/mlflow/runs/search:
+    post:
+      tags: [Runs]
+      summary: Search runs
+      operationId: searchRuns
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                experiment_ids:
+                  type: array
+                  items:
+                    type: string
+                filter:
+                  type: string
+                max_results:
+                  type: integer
+      responses:
+        "200":
+          description: Search results
+  /api/2.0/mlflow/runs/delete:
+    post:
+      tags: [Runs]
+      summary: Delete run
+      operationId: deleteRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id]
+              properties:
+                run_id:
+                  type: string
+      responses:
+        "200":
+          description: Run deleted
+  /api/2.0/mlflow/runs/restore:
+    post:
+      tags: [Runs]
+      summary: Restore run
+      operationId: restoreRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id]
+              properties:
+                run_id:
+                  type: string
+      responses:
+        "200":
+          description: Run restored
+  /api/2.0/mlflow/runs/log-metric:
+    post:
+      tags: [Metrics]
+      summary: Log a metric for a run
+      operationId: logMetric
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id, key, value, timestamp]
+              properties:
+                run_id:
+                  type: string
+                key:
+                  type: string
+                value:
+                  type: number
+                timestamp:
+                  type: integer
+                step:
+                  type: integer
+      responses:
+        "200":
+          description: Metric logged
+  /api/2.0/mlflow/runs/log-parameter:
+    post:
+      tags: [Metrics]
+      summary: Log a parameter for a run
+      operationId: logParameter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id, key, value]
+              properties:
+                run_id:
+                  type: string
+                key:
+                  type: string
+                value:
+                  type: string
+      responses:
+        "200":
+          description: Parameter logged
+  /api/2.0/mlflow/runs/log-batch:
+    post:
+      tags: [Metrics]
+      summary: Log a batch of metrics, params, and tags
+      operationId: logBatch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                run_id:
+                  type: string
+                metrics:
+                  type: array
+                  items:
+                    type: object
+                params:
+                  type: array
+                  items:
+                    type: object
+                tags:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        "200":
+          description: Batch logged
+  /api/2.0/mlflow/metrics/get-history:
+    get:
+      tags: [Metrics]
+      summary: Get metric history
+      operationId: getMetricHistory
+      parameters:
+        - in: query
+          name: run_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: metric_key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Metric history
+  /api/2.0/mlflow/artifacts/list:
+    get:
+      tags: [Artifacts]
+      summary: List artifacts for a run
+      operationId: listArtifacts
+      parameters:
+        - in: query
+          name: run_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: path
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Artifact list
+  /api/2.0/mlflow/artifacts/presigned-upload-url:
+    post:
+      tags: [Artifacts]
+      summary: Get presigned URL for artifact upload
+      operationId: presignedUploadUrl
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [run_id, path]
+              properties:
+                run_id:
+                  type: string
+                path:
+                  type: string
+      responses:
+        "200":
+          description: Presigned URL returned
+  /api/2.0/mlflow/registered-models/create:
+    post:
+      tags: [Registered Models]
+      summary: Create registered model
+      operationId: createRegisteredModel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+                description:
+                  type: string
+      responses:
+        "200":
+          description: Registered model created
+  /api/2.0/mlflow/registered-models/get:
+    get:
+      tags: [Registered Models]
+      summary: Get registered model
+      operationId: getRegisteredModel
+      parameters:
+        - in: query
+          name: name
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Registered model
+  /api/2.0/mlflow/registered-models/search:
+    post:
+      tags: [Registered Models]
+      summary: Search registered models
+      operationId: searchRegisteredModels
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                max_results:
+                  type: integer
+                order_by:
+                  type: array
+                  items:
+                    type: string
+                page_token:
+                  type: string
+      responses:
+        "200":
+          description: Search results
+  /api/2.0/mlflow/model-versions/create:
+    post:
+      tags: [Model Versions]
+      summary: Create model version
+      operationId: createModelVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, source]
+              properties:
+                name:
+                  type: string
+                source:
+                  type: string
+                run_id:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+                description:
+                  type: string
+      responses:
+        "200":
+          description: Model version created
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: |
+        Optional HTTP Basic authentication when the MLflow tracking server is
+        configured with the `mlflow-basic-auth` plugin. Default open-source
+        servers run without authentication.
