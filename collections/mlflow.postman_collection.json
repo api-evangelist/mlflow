@@ -1,0 +1,2021 @@
+{
+  "item": [
+    {
+      "id": "dd4e99d1-a42f-48c9-b075-1569b962c287",
+      "name": "Experiments",
+      "description": {
+        "content": "Manage MLflow experiments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dd0cb41c-7b6a-4806-a857-a35ce8d8e398",
+          "name": "Create experiment",
+          "request": {
+            "name": "Create experiment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"artifact_location\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "467c9c21-78ae-41b6-aa3d-62772abe2bc1",
+              "name": "Experiment created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"artifact_location\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11f18a79-3844-474c-b4b8-60accd37fcd3",
+          "name": "Search experiments",
+          "request": {
+            "name": "Search experiments",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"max_results\": \"<integer>\",\n  \"filter\": \"<string>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "504ed9dd-fb85-4ccb-b694-d3e27fb8622f",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"max_results\": \"<integer>\",\n  \"filter\": \"<string>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "014f7557-b56d-45f4-a7db-840baedcb16d",
+          "name": "Get experiment",
+          "request": {
+            "name": "Get experiment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "experiment_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e30a2f40-23e7-4b8f-a977-130db0f85bbd",
+              "name": "Experiment object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "experiment_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdaca09b-6baf-406e-8a86-3ecfe77ef3d8",
+          "name": "Get experiment by name",
+          "request": {
+            "name": "Get experiment by name",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "get-by-name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "experiment_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3f48fad-5d6a-40d6-ac18-990e4282060a",
+              "name": "Experiment object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "get-by-name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "experiment_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95424b6c-d021-4f05-af6d-75962c9dd7ef",
+          "name": "Delete experiment",
+          "request": {
+            "name": "Delete experiment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experiment_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f08f2bcd-928f-4f2a-a6f7-9ea09a5eb93d",
+              "name": "Experiment deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"experiment_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "594dacb9-8ab0-4306-b4cc-5f29abc02699",
+          "name": "Restore experiment",
+          "request": {
+            "name": "Restore experiment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experiment_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b686b5aa-dcb5-439f-9cab-9c349b12da8e",
+              "name": "Experiment restored",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"experiment_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1fd77b9f-5f2f-4757-8270-c3ac712443f7",
+          "name": "Update experiment",
+          "request": {
+            "name": "Update experiment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "experiments",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experiment_id\": \"<string>\",\n  \"new_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cf7c6a26-af5d-452a-8282-c9e9cb21b9f3",
+              "name": "Experiment updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "experiments",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"experiment_id\": \"<string>\",\n  \"new_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "04cdb0c8-c4b4-4a48-8f17-1636b63e9c3d",
+      "name": "Runs",
+      "description": {
+        "content": "Create and manage runs within an experiment.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ad970681-fa6e-415c-a041-23883db94304",
+          "name": "Create run",
+          "request": {
+            "name": "Create run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experiment_id\": \"<string>\",\n  \"start_time\": \"<integer>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14708839-8773-472e-9a81-4a28323e341c",
+              "name": "Run created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"experiment_id\": \"<string>\",\n  \"start_time\": \"<integer>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8f4dc97-e65f-46f4-94bc-b1b59ce288fd",
+          "name": "Update run",
+          "request": {
+            "name": "Update run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"end_time\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87a95ec2-b1f2-4184-a24c-bcc31bab65dc",
+              "name": "Run updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"end_time\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9ab0629-6d50-4c41-9b32-072b5892a21a",
+          "name": "Get run",
+          "request": {
+            "name": "Get run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "run_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ca7ea5f-0f7d-4b84-bfa0-99b0bc3f1641",
+              "name": "Run object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "run_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7501b8c8-3f07-4ec7-baa1-74df3f273ad6",
+          "name": "Search runs",
+          "request": {
+            "name": "Search runs",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"experiment_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7b4efb7-1532-44d8-b316-ef5dca77edb0",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"experiment_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7b5a0d5-2307-4192-bf0f-4da3ed309024",
+          "name": "Delete run",
+          "request": {
+            "name": "Delete run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "734c2102-ef32-4303-a8bf-3ceccbfde762",
+              "name": "Run deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1485407-4c2a-4ee0-ac39-1d89fdad39dd",
+          "name": "Restore run",
+          "request": {
+            "name": "Restore run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86dd8cfb-5e2b-4358-8430-1ffea5e3c959",
+              "name": "Run restored",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2bb18126-9fad-4b55-9d05-6151855696c2",
+      "name": "Metrics",
+      "description": {
+        "content": "Log and retrieve metric history for runs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9de9c280-5836-4ee4-a99d-ae2fc7a66def",
+          "name": "Log a metric for a run",
+          "request": {
+            "name": "Log a metric for a run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "log-metric"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"key\": \"<string>\",\n  \"value\": \"<number>\",\n  \"timestamp\": \"<integer>\",\n  \"step\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de56dcfd-442b-4a23-8859-774f0d85d7b8",
+              "name": "Metric logged",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "log-metric"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"key\": \"<string>\",\n  \"value\": \"<number>\",\n  \"timestamp\": \"<integer>\",\n  \"step\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc85498a-2ecb-4fad-b682-c94b84ed6e25",
+          "name": "Log a parameter for a run",
+          "request": {
+            "name": "Log a parameter for a run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "log-parameter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"key\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a87709d3-d884-4b76-8137-f8a1408c9bf2",
+              "name": "Parameter logged",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "log-parameter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"key\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d93674f-448c-4949-9b72-afe2428960b4",
+          "name": "Log a batch of metrics, params, and tags",
+          "request": {
+            "name": "Log a batch of metrics, params, and tags",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "runs",
+                "log-batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"metrics\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"params\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba0e3293-8dda-4887-a572-f2b14e60879b",
+              "name": "Batch logged",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "runs",
+                    "log-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"metrics\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"params\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4541181-ef4b-45ff-9c7d-2bb7d29b2678",
+          "name": "Get metric history",
+          "request": {
+            "name": "Get metric history",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "metrics",
+                "get-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "run_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "metric_key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38fe4920-fbd5-44d6-8bf2-3bcd72998d38",
+              "name": "Metric history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "metrics",
+                    "get-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "run_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "metric_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "89d866d1-ad31-4d89-9f9f-bab02ef3b26a",
+      "name": "Artifacts",
+      "description": {
+        "content": "List and obtain presigned URLs for run artifacts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d9e7c529-608d-4e60-8b8e-38fda68c6ffc",
+          "name": "List artifacts for a run",
+          "request": {
+            "name": "List artifacts for a run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "artifacts",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "run_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "path",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c208aac-b948-4f9e-809e-3930f26e5a5c",
+              "name": "Artifact list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "artifacts",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "run_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "path",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0990ce44-7292-480d-9882-4684800d4638",
+          "name": "Get presigned URL for artifact upload",
+          "request": {
+            "name": "Get presigned URL for artifact upload",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "artifacts",
+                "presigned-upload-url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"path\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04d685f7-c72a-4eb4-b901-c2cfd80f7b41",
+              "name": "Presigned URL returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "artifacts",
+                    "presigned-upload-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"path\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b3c4eb11-f36f-4e17-b6db-e24945e575ec",
+      "name": "Registered Models",
+      "description": {
+        "content": "Manage registered models in the MLflow Model Registry.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c1a4c38-8150-4ef1-8b99-c9f4c061281b",
+          "name": "Create registered model",
+          "request": {
+            "name": "Create registered model",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "53452386-338c-442d-ae72-ae15bf4b02b6",
+              "name": "Registered model created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "045a872e-2c3c-4828-8b0f-8b3236b95376",
+          "name": "Get registered model",
+          "request": {
+            "name": "Get registered model",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b71c1a6-befd-45f4-8a12-d00c1f7ff764",
+              "name": "Registered model",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8b74681-0943-43ef-ad46-a81146a50e74",
+          "name": "Search registered models",
+          "request": {
+            "name": "Search registered models",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cae812e0-e263-4bb4-a18e-7a731ea2ac8e",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c434a609-e58b-4849-adad-17bf36c3fb70",
+      "name": "Model Versions",
+      "description": {
+        "content": "Manage versions of registered models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "29dbbbec-50db-4be0-baec-4d52b9a272d3",
+          "name": "Create model version",
+          "request": {
+            "name": "Create model version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "model-versions",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"run_id\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "241c19e0-f3d2-45a9-9585-9d005de2b268",
+              "name": "Model version created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "model-versions",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"run_id\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "069edeb3-02ee-4c5a-8b2b-e7f236f3fd89",
+    "name": "MLflow Tracking REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.\nThe tracking server exposes REST endpoints under `/api/2.0/mlflow` for\nexperiments, runs, metrics, parameters, artifacts, and the model registry.\nSee https://mlflow.org/docs/latest/rest-api.html\n\n\nContact Support:\n Name: MLflow",
+      "type": "text/plain"
+    }
+  }
+}

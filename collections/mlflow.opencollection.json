@@ -1,0 +1,431 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MLflow Tracking REST API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Experiments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create experiment"
+        },
+        {
+          "info": {
+            "name": "Search experiments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search experiments"
+        },
+        {
+          "info": {
+            "name": "Get experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/get",
+            "params": [
+              {
+                "name": "experiment_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get experiment"
+        },
+        {
+          "info": {
+            "name": "Get experiment by name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/get-by-name",
+            "params": [
+              {
+                "name": "experiment_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get experiment by name"
+        },
+        {
+          "info": {
+            "name": "Delete experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete experiment"
+        },
+        {
+          "info": {
+            "name": "Restore experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restore experiment"
+        },
+        {
+          "info": {
+            "name": "Update experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update experiment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Runs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create run"
+        },
+        {
+          "info": {
+            "name": "Update run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update run"
+        },
+        {
+          "info": {
+            "name": "Get run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/get",
+            "params": [
+              {
+                "name": "run_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get run"
+        },
+        {
+          "info": {
+            "name": "Search runs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search runs"
+        },
+        {
+          "info": {
+            "name": "Delete run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete run"
+        },
+        {
+          "info": {
+            "name": "Restore run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restore run"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log a metric for a run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-metric",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a metric for a run"
+        },
+        {
+          "info": {
+            "name": "Log a parameter for a run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-parameter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a parameter for a run"
+        },
+        {
+          "info": {
+            "name": "Log a batch of metrics, params, and tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a batch of metrics, params, and tags"
+        },
+        {
+          "info": {
+            "name": "Get metric history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/metrics/get-history",
+            "params": [
+              {
+                "name": "run_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "metric_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get metric history"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Artifacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List artifacts for a run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/artifacts/list",
+            "params": [
+              {
+                "name": "run_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List artifacts for a run"
+        },
+        {
+          "info": {
+            "name": "Get presigned URL for artifact upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/artifacts/presigned-upload-url",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get presigned URL for artifact upload"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Registered Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create registered model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create registered model"
+        },
+        {
+          "info": {
+            "name": "Get registered model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/get",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get registered model"
+        },
+        {
+          "info": {
+            "name": "Search registered models",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search registered models"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Model Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create model version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/model-versions/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create model version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
