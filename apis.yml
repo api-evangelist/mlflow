@@ -36,13 +36,13 @@ apis:
     properties:
       - type: Documentation
         url: https://mlflow.org/docs/latest/rest-api.html
-      - type: SDK
+      - type: SDKs
         title: Python (mlflow)
         url: https://mlflow.org/docs/latest/python_api/index.html
-      - type: SDK
+      - type: SDKs
         title: Java
         url: https://mlflow.org/docs/latest/java_api/index.html
-      - type: SDK
+      - type: SDKs
         title: R
         url: https://mlflow.org/docs/latest/R-api.html
   - aid: mlflow:mlflow-gateway-api
@@ -79,7 +79,7 @@ common:
     url: rate-limits/mlflow-rate-limits.yml
   - type: FinOps
     url: finops/mlflow-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://mlflow.org/llms.txt
 maintainers:
   - FN: Kin Lane
