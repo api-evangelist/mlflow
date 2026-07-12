@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/mlflow-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: |-
+    Optional HTTP Basic authentication when the MLflow tracking server is
+    configured with the `mlflow-basic-auth` plugin. Default open-source
+    servers run without authentication.
+  sources:
+  - openapi/mlflow-openapi.yml

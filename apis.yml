@@ -60,6 +60,10 @@ apis:
       - type: Documentation
         url: https://mlflow.org/docs/latest/llms/gateway/index.html
 common:
+  - type: DomainSecurity
+    url: security/mlflow-domain-security.yml
+  - type: Authentication
+    url: authentication/mlflow-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/mlflow-org
   - type: Website
@@ -81,6 +85,8 @@ common:
     url: finops/mlflow-finops.yml
   - type: LlmsText
     url: https://mlflow.org/llms.txt
+  - url: https://mlflow.org/blog/rss.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
