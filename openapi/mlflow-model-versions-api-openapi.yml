@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: MLflow Tracking REST Artifacts Model Versions API
+  version: '2.0'
+  summary: REST API for the MLflow tracking server, model registry, and metrics.
+  description: 'MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
+
+    The tracking server exposes REST endpoints under `/api/2.0/mlflow` for
+
+    experiments, runs, metrics, parameters, artifacts, and the model registry.
+
+    See https://mlflow.org/docs/latest/rest-api.html
+
+    '
+  contact:
+    name: MLflow
+    url: https://mlflow.org/
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:5000
+  description: Default local MLflow tracking server
+- url: https://{host}
+  description: Self-hosted MLflow tracking server
+  variables:
+    host:
+      default: mlflow.example.com
+      description: Hostname of the MLflow tracking server
+security:
+- {}
+- basicAuth: []
+tags:
+- name: Model Versions
+  description: Manage versions of registered models.
+paths:
+  /api/2.0/mlflow/model-versions/create:
+    post:
+      tags:
+      - Model Versions
+      summary: Create model version
+      operationId: createModelVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - source
+              properties:
+                name:
+                  type: string
+                source:
+                  type: string
+                run_id:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Model version created
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Optional HTTP Basic authentication when the MLflow tracking server is
+
+        configured with the `mlflow-basic-auth` plugin. Default open-source
+
+        servers run without authentication.
+
+        '

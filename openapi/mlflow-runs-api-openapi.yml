@@ -1,0 +1,175 @@
+openapi: 3.1.0
+info:
+  title: MLflow Tracking REST Artifacts Runs API
+  version: '2.0'
+  summary: REST API for the MLflow tracking server, model registry, and metrics.
+  description: 'MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
+
+    The tracking server exposes REST endpoints under `/api/2.0/mlflow` for
+
+    experiments, runs, metrics, parameters, artifacts, and the model registry.
+
+    See https://mlflow.org/docs/latest/rest-api.html
+
+    '
+  contact:
+    name: MLflow
+    url: https://mlflow.org/
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:5000
+  description: Default local MLflow tracking server
+- url: https://{host}
+  description: Self-hosted MLflow tracking server
+  variables:
+    host:
+      default: mlflow.example.com
+      description: Hostname of the MLflow tracking server
+security:
+- {}
+- basicAuth: []
+tags:
+- name: Runs
+  description: Create and manage runs within an experiment.
+paths:
+  /api/2.0/mlflow/runs/create:
+    post:
+      tags:
+      - Runs
+      summary: Create run
+      operationId: createRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                experiment_id:
+                  type: string
+                start_time:
+                  type: integer
+                tags:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          description: Run created
+  /api/2.0/mlflow/runs/update:
+    post:
+      tags:
+      - Runs
+      summary: Update run
+      operationId: updateRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - run_id
+              properties:
+                run_id:
+                  type: string
+                status:
+                  type: string
+                end_time:
+                  type: integer
+      responses:
+        '200':
+          description: Run updated
+  /api/2.0/mlflow/runs/get:
+    get:
+      tags:
+      - Runs
+      summary: Get run
+      operationId: getRun
+      parameters:
+      - in: query
+        name: run_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Run object
+  /api/2.0/mlflow/runs/search:
+    post:
+      tags:
+      - Runs
+      summary: Search runs
+      operationId: searchRuns
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                experiment_ids:
+                  type: array
+                  items:
+                    type: string
+                filter:
+                  type: string
+                max_results:
+                  type: integer
+      responses:
+        '200':
+          description: Search results
+  /api/2.0/mlflow/runs/delete:
+    post:
+      tags:
+      - Runs
+      summary: Delete run
+      operationId: deleteRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - run_id
+              properties:
+                run_id:
+                  type: string
+      responses:
+        '200':
+          description: Run deleted
+  /api/2.0/mlflow/runs/restore:
+    post:
+      tags:
+      - Runs
+      summary: Restore run
+      operationId: restoreRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - run_id
+              properties:
+                run_id:
+                  type: string
+      responses:
+        '200':
+          description: Run restored
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Optional HTTP Basic authentication when the MLflow tracking server is
+
+        configured with the `mlflow-basic-auth` plugin. Default open-source
+
+        servers run without authentication.
+
+        '

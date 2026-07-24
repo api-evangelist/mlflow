@@ -1,0 +1,192 @@
+openapi: 3.1.0
+info:
+  title: MLflow Tracking REST Artifacts Experiments API
+  version: '2.0'
+  summary: REST API for the MLflow tracking server, model registry, and metrics.
+  description: 'MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
+
+    The tracking server exposes REST endpoints under `/api/2.0/mlflow` for
+
+    experiments, runs, metrics, parameters, artifacts, and the model registry.
+
+    See https://mlflow.org/docs/latest/rest-api.html
+
+    '
+  contact:
+    name: MLflow
+    url: https://mlflow.org/
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:5000
+  description: Default local MLflow tracking server
+- url: https://{host}
+  description: Self-hosted MLflow tracking server
+  variables:
+    host:
+      default: mlflow.example.com
+      description: Hostname of the MLflow tracking server
+security:
+- {}
+- basicAuth: []
+tags:
+- name: Experiments
+  description: Manage MLflow experiments.
+paths:
+  /api/2.0/mlflow/experiments/create:
+    post:
+      tags:
+      - Experiments
+      summary: Create experiment
+      operationId: createExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                artifact_location:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          description: Experiment created
+  /api/2.0/mlflow/experiments/search:
+    post:
+      tags:
+      - Experiments
+      summary: Search experiments
+      operationId: searchExperiments
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                max_results:
+                  type: integer
+                filter:
+                  type: string
+                order_by:
+                  type: array
+                  items:
+                    type: string
+                page_token:
+                  type: string
+      responses:
+        '200':
+          description: Search results
+  /api/2.0/mlflow/experiments/get:
+    get:
+      tags:
+      - Experiments
+      summary: Get experiment
+      operationId: getExperiment
+      parameters:
+      - in: query
+        name: experiment_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Experiment object
+  /api/2.0/mlflow/experiments/get-by-name:
+    get:
+      tags:
+      - Experiments
+      summary: Get experiment by name
+      operationId: getExperimentByName
+      parameters:
+      - in: query
+        name: experiment_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Experiment object
+  /api/2.0/mlflow/experiments/delete:
+    post:
+      tags:
+      - Experiments
+      summary: Delete experiment
+      operationId: deleteExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - experiment_id
+              properties:
+                experiment_id:
+                  type: string
+      responses:
+        '200':
+          description: Experiment deleted
+  /api/2.0/mlflow/experiments/restore:
+    post:
+      tags:
+      - Experiments
+      summary: Restore experiment
+      operationId: restoreExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - experiment_id
+              properties:
+                experiment_id:
+                  type: string
+      responses:
+        '200':
+          description: Experiment restored
+  /api/2.0/mlflow/experiments/update:
+    post:
+      tags:
+      - Experiments
+      summary: Update experiment
+      operationId: updateExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - experiment_id
+              properties:
+                experiment_id:
+                  type: string
+                new_name:
+                  type: string
+      responses:
+        '200':
+          description: Experiment updated
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Optional HTTP Basic authentication when the MLflow tracking server is
+
+        configured with the `mlflow-basic-auth` plugin. Default open-source
+
+        servers run without authentication.
+
+        '

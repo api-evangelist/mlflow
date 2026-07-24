@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: MLflow Tracking REST Artifacts Registered Models API
+  version: '2.0'
+  summary: REST API for the MLflow tracking server, model registry, and metrics.
+  description: 'MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
+
+    The tracking server exposes REST endpoints under `/api/2.0/mlflow` for
+
+    experiments, runs, metrics, parameters, artifacts, and the model registry.
+
+    See https://mlflow.org/docs/latest/rest-api.html
+
+    '
+  contact:
+    name: MLflow
+    url: https://mlflow.org/
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:5000
+  description: Default local MLflow tracking server
+- url: https://{host}
+  description: Self-hosted MLflow tracking server
+  variables:
+    host:
+      default: mlflow.example.com
+      description: Hostname of the MLflow tracking server
+security:
+- {}
+- basicAuth: []
+tags:
+- name: Registered Models
+  description: Manage registered models in the MLflow Model Registry.
+paths:
+  /api/2.0/mlflow/registered-models/create:
+    post:
+      tags:
+      - Registered Models
+      summary: Create registered model
+      operationId: createRegisteredModel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: object
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Registered model created
+  /api/2.0/mlflow/registered-models/get:
+    get:
+      tags:
+      - Registered Models
+      summary: Get registered model
+      operationId: getRegisteredModel
+      parameters:
+      - in: query
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Registered model
+  /api/2.0/mlflow/registered-models/search:
+    post:
+      tags:
+      - Registered Models
+      summary: Search registered models
+      operationId: searchRegisteredModels
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  type: string
+                max_results:
+                  type: integer
+                order_by:
+                  type: array
+                  items:
+                    type: string
+                page_token:
+                  type: string
+      responses:
+        '200':
+          description: Search results
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Optional HTTP Basic authentication when the MLflow tracking server is
+
+        configured with the `mlflow-basic-auth` plugin. Default open-source
+
+        servers run without authentication.
+
+        '
