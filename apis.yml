@@ -6,7 +6,20 @@ description: >-
   MLflow is an Apache 2.0 open-source platform for the end-to-end ML and GenAI
   lifecycle: tracking, model registry, deployment, evaluation, traces, prompts, and
   GenAI gateway. The tracking server exposes a REST API under `/api/2.0/mlflow`.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mlflow.png
 tags:
   - ML
   - MLOps
@@ -17,48 +30,107 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: mlflow:mlflow-tracking-rest-api
-    name: MLflow REST API
-    humanURL: https://mlflow.org/docs/latest/rest-api.html
-    baseURL: http://{tracking_server}/api/2.0/mlflow
-    tags:
-      - REST
-      - Experiments
-      - Runs
-      - Model Registry
-      - Artifacts
-    description: >-
-      The MLflow tracking server exposes a REST API for experiments, runs, parameters,
-      metrics, tags, registered models, model versions, model aliases, and artifacts,
-      plus newer endpoints for traces, prompts, datasets, and the AI gateway. POST
-      requests use `application/json`. Pagination via `max_results` / `page_token`.
-      Authentication is deployment-specific (basic auth, OIDC, or none).
-    properties:
-      - type: Documentation
-        url: https://mlflow.org/docs/latest/rest-api.html
-      - type: SDKs
-        title: Python (mlflow)
-        url: https://mlflow.org/docs/latest/python_api/index.html
-      - type: SDKs
-        title: Java
-        url: https://mlflow.org/docs/latest/java_api/index.html
-      - type: SDKs
-        title: R
-        url: https://mlflow.org/docs/latest/R-api.html
-  - aid: mlflow:mlflow-gateway-api
-    name: MLflow AI Gateway API
-    humanURL: https://mlflow.org/docs/latest/llms/gateway/index.html
-    baseURL: http://{gateway}/gateway
-    tags:
-      - GenAI
-      - LLM Gateway
-      - REST
-    description: >-
-      The MLflow AI Gateway provides a unified HTTP interface to LLM providers with
-      routing, rate-limiting, and secret management features.
-    properties:
-      - type: Documentation
-        url: https://mlflow.org/docs/latest/llms/gateway/index.html
+- aid: mlflow:mlflow-tracking-rest-api
+  name: MLflow REST API
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - REST
+  - Experiments
+  - Runs
+  - Model Registry
+  - Artifacts
+  description: >-
+    The MLflow tracking server exposes a REST API for experiments, runs, parameters, metrics, tags, registered
+    models, model versions, model aliases, and artifacts, plus newer endpoints for traces, prompts, datasets,
+    and the AI gateway. POST requests use `application/json`. Pagination via `max_results` / `page_token`.
+    Authentication is deployment-specific (basic auth, OIDC, or none).
+  properties:
+  - type: Documentation
+    url: https://mlflow.org/docs/latest/rest-api.html
+  - type: SDKs
+    title: Python (mlflow)
+    url: https://mlflow.org/docs/latest/python_api/index.html
+  - type: SDKs
+    title: Java
+    url: https://mlflow.org/docs/latest/java_api/index.html
+  - type: SDKs
+    title: R
+    url: https://mlflow.org/docs/latest/R-api.html
+- aid: mlflow:mlflow-gateway-api
+  name: MLflow AI Gateway API
+  humanURL: https://mlflow.org/docs/latest/llms/gateway/index.html
+  baseURL: http://{gateway}/gateway
+  tags:
+  - GenAI
+  - LLM Gateway
+  - REST
+  description: >-
+    The MLflow AI Gateway provides a unified HTTP interface to LLM providers with routing, rate-limiting,
+    and secret management features.
+  properties:
+  - type: Documentation
+    url: https://mlflow.org/docs/latest/llms/gateway/index.html
+- aid: mlflow:mlflow-artifacts-api
+  name: MLflow Artifacts API
+  description: List and obtain presigned URLs for run artifacts.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Artifacts
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-artifacts-api-openapi.yml
+- aid: mlflow:mlflow-experiments-api
+  name: MLflow Experiments API
+  description: Manage MLflow experiments.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Experiments
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-experiments-api-openapi.yml
+- aid: mlflow:mlflow-metrics-api
+  name: MLflow Metrics API
+  description: Log and retrieve metric history for runs.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-metrics-api-openapi.yml
+- aid: mlflow:mlflow-model-versions-api
+  name: MLflow Model Versions API
+  description: Manage versions of registered models.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Model Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-model-versions-api-openapi.yml
+- aid: mlflow:mlflow-registered-models-api
+  name: MLflow Registered Models API
+  description: Manage registered models in the MLflow Model Registry.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Registered Models
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-registered-models-api-openapi.yml
+- aid: mlflow:mlflow-runs-api
+  name: MLflow Runs API
+  description: Create and manage runs within an experiment.
+  humanURL: https://mlflow.org/docs/latest/rest-api.html
+  baseURL: http://{tracking_server}/api/2.0/mlflow
+  tags:
+  - Runs
+  properties:
+  - type: OpenAPI
+    url: openapi/mlflow-runs-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/mlflow-agentic-access.yml
