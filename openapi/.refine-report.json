@@ -1,0 +1,24 @@
+{
+  "provider": "mlflow",
+  "sources": [
+    "mlflow-artifacts-api-openapi.yml",
+    "mlflow-experiments-api-openapi.yml",
+    "mlflow-metrics-api-openapi.yml",
+    "mlflow-model-versions-api-openapi.yml",
+    "mlflow-registered-models-api-openapi.yml",
+    "mlflow-runs-api-openapi.yml"
+  ],
+  "outputs": [
+    "mlflow-artifacts-api-openapi.yml",
+    "mlflow-experiments-api-openapi.yml",
+    "mlflow-metrics-api-openapi.yml",
+    "mlflow-model-versions-api-openapi.yml",
+    "mlflow-registered-models-api-openapi.yml",
+    "mlflow-runs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
