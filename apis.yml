@@ -132,6 +132,14 @@ apis:
   - type: OpenAPI
     url: openapi/mlflow-runs-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/mlflow/mlflow/issues
+  - type: Releases
+    url: https://github.com/mlflow/mlflow/releases
+  - type: SecurityPolicy
+    url: https://github.com/mlflow/mlflow/blob/master/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/mlflow/mlflow/blob/master/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/mlflow-agentic-access.yml
   - type: DomainSecurity
