@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MLflow Tracking REST Artifacts Registered Models API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Registered Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create registered model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create registered model"
+        },
+        {
+          "info": {
+            "name": "Get registered model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/get",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get registered model"
+        },
+        {
+          "info": {
+            "name": "Search registered models",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/registered-models/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search registered models"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

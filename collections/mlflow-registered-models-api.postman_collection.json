@@ -1,0 +1,282 @@
+{
+  "item": [
+    {
+      "id": "91c764ea-c400-4411-98e5-d90ba1e01297",
+      "name": "Registered Models",
+      "description": {
+        "content": "Manage registered models in the MLflow Model Registry.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "65c85bab-3923-49b3-984d-0bbed0e8f50b",
+          "name": "Create registered model",
+          "request": {
+            "name": "Create registered model",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e539dfa-3490-4c7e-a7c8-01e2f0b6b95d",
+              "name": "Registered model created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "130787ee-1e4b-4d68-af17-58475bd03bb2",
+          "name": "Get registered model",
+          "request": {
+            "name": "Get registered model",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46f10e0b-d3e8-44d9-a18c-f644b035ff02",
+              "name": "Registered model",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "939de4b4-1791-4790-9fec-023ee9c44aae",
+          "name": "Search registered models",
+          "request": {
+            "name": "Search registered models",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "registered-models",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "469265d7-e66d-46ab-bc40-295533179ee6",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "registered-models",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": \"<string>\",\n  \"max_results\": \"<integer>\",\n  \"order_by\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"page_token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "62a34eab-b3d0-400c-8a65-9b8bbd269803",
+    "name": "MLflow Tracking REST Artifacts Registered Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.\nThe tracking server exposes REST endpoints under `/api/2.0/mlflow` for\nexperiments, runs, metrics, parameters, artifacts, and the model registry.\nSee https://mlflow.org/docs/latest/rest-api.html\n\n\nContact Support:\n Name: MLflow",
+      "type": "text/plain"
+    }
+  }
+}

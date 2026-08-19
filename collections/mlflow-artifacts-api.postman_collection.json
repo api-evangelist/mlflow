@@ -1,0 +1,205 @@
+{
+  "item": [
+    {
+      "id": "c43f6592-1283-40c0-b6f1-564151f94762",
+      "name": "Artifacts",
+      "description": {
+        "content": "List and obtain presigned URLs for run artifacts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68b7200f-07ba-40a6-a44b-80e339a56fd8",
+          "name": "List artifacts for a run",
+          "request": {
+            "name": "List artifacts for a run",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "artifacts",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "run_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "path",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0caafc90-904c-447e-8d32-ef8d8b01b317",
+              "name": "Artifact list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "artifacts",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "run_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "path",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e09adeb-b0ba-4d48-8f4c-c4c9baf6fd1d",
+          "name": "Get presigned URL for artifact upload",
+          "request": {
+            "name": "Get presigned URL for artifact upload",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "artifacts",
+                "presigned-upload-url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"run_id\": \"<string>\",\n  \"path\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14c7a03d-1a61-498a-b274-6da1578dbbfa",
+              "name": "Presigned URL returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "artifacts",
+                    "presigned-upload-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"run_id\": \"<string>\",\n  \"path\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "c42be712-8bf1-4114-b7f7-a3988aa35807",
+    "name": "MLflow Tracking REST Artifacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.\nThe tracking server exposes REST endpoints under `/api/2.0/mlflow` for\nexperiments, runs, metrics, parameters, artifacts, and the model registry.\nSee https://mlflow.org/docs/latest/rest-api.html\n\n\nContact Support:\n Name: MLflow",
+      "type": "text/plain"
+    }
+  }
+}

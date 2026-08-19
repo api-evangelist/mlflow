@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MLflow Tracking REST Artifacts Model Versions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Model Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create model version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/model-versions/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create model version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

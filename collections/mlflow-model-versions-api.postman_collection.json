@@ -1,0 +1,121 @@
+{
+  "item": [
+    {
+      "id": "84ebe978-805f-42a2-9b99-ab912900c800",
+      "name": "Model Versions",
+      "description": {
+        "content": "Manage versions of registered models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d7747723-4147-4799-9225-47ff4be29363",
+          "name": "Create model version",
+          "request": {
+            "name": "Create model version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "2.0",
+                "mlflow",
+                "model-versions",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"run_id\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18f66c82-5850-4b9f-958d-d2618e846dfa",
+              "name": "Model version created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "2.0",
+                    "mlflow",
+                    "model-versions",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"run_id\": \"<string>\",\n  \"tags\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "8576edc5-1a69-4c60-af92-c0817b6639f7",
+    "name": "MLflow Tracking REST Artifacts Model Versions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.\nThe tracking server exposes REST endpoints under `/api/2.0/mlflow` for\nexperiments, runs, metrics, parameters, artifacts, and the model registry.\nSee https://mlflow.org/docs/latest/rest-api.html\n\n\nContact Support:\n Name: MLflow",
+      "type": "text/plain"
+    }
+  }
+}

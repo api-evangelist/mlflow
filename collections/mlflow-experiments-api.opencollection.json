@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MLflow Tracking REST Artifacts Experiments API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Experiments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create experiment"
+        },
+        {
+          "info": {
+            "name": "Search experiments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search experiments"
+        },
+        {
+          "info": {
+            "name": "Get experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/get",
+            "params": [
+              {
+                "name": "experiment_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get experiment"
+        },
+        {
+          "info": {
+            "name": "Get experiment by name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/get-by-name",
+            "params": [
+              {
+                "name": "experiment_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get experiment by name"
+        },
+        {
+          "info": {
+            "name": "Delete experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete experiment"
+        },
+        {
+          "info": {
+            "name": "Restore experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/restore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restore experiment"
+        },
+        {
+          "info": {
+            "name": "Update experiment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/experiments/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update experiment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

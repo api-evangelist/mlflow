@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MLflow Tracking REST Artifacts Metrics API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log a metric for a run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-metric",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a metric for a run"
+        },
+        {
+          "info": {
+            "name": "Log a parameter for a run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-parameter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a parameter for a run"
+        },
+        {
+          "info": {
+            "name": "Log a batch of metrics, params, and tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/2.0/mlflow/runs/log-batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Log a batch of metrics, params, and tags"
+        },
+        {
+          "info": {
+            "name": "Get metric history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/2.0/mlflow/metrics/get-history",
+            "params": [
+              {
+                "name": "run_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "metric_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get metric history"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
