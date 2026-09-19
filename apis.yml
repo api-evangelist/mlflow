@@ -35,9 +35,9 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mlflow.png
 tags:
-  - ML
+  - Machine-Learning
   - MLOps
-  - GenAI
+  - Generative AI
   - Experiment Tracking
   - Open-Source
 tags_raw:
@@ -82,6 +82,10 @@ apis:
   humanURL: https://mlflow.org/docs/latest/llms/gateway/index.html
   baseURL: http://{gateway}/gateway
   tags:
+  - Generative AI
+  - LLM Gateway
+  - REST
+  tags_raw:
   - GenAI
   - LLM Gateway
   - REST
