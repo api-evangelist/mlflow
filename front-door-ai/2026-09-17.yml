@@ -1,0 +1,33 @@
+# Front Door AI Index — mlflow — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: mlflow
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: mlflow.org
+  final_host: mlflow.org
+  ownership: own
+  owner: mlflow
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 68
+  host_score: 68
+  density: 71.65
+  words: 949
+  tiers:
+    agentic: 9
+    core: 53
+    model: 6
+  ambiguous: 23
+  top_terms:
+    AI: 23
+    agent: 23
+    LLMs: 16
+    ML: 9
+    OpenAI: 6
+    prompts: 6
+    AI agent: 3
+    machine learning: 3
+    deep learning: 2

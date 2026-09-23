@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: MLflow Tracking REST Artifacts Experiments API
+  title: MLflow Tracking REST Experiments API
   version: '2.0'
   summary: REST API for the MLflow tracking server, model registry, and metrics.
   description: 'MLflow is an open-source platform for the end-to-end ML and GenAI lifecycle.
@@ -9,9 +9,7 @@ info:
 
     experiments, runs, metrics, parameters, artifacts, and the model registry.
 
-    See https://mlflow.org/docs/latest/rest-api.html
-
-    '
+    See https://mlflow.org/docs/latest/rest-api.html'
   contact:
     name: MLflow
     url: https://mlflow.org/

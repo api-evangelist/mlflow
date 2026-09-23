@@ -1,12 +1,7 @@
 {
   "provider": "mlflow",
   "sources": [
-    "mlflow-artifacts-api-openapi.yml",
-    "mlflow-experiments-api-openapi.yml",
-    "mlflow-metrics-api-openapi.yml",
-    "mlflow-model-versions-api-openapi.yml",
-    "mlflow-registered-models-api-openapi.yml",
-    "mlflow-runs-api-openapi.yml"
+    "_original/mlflow-openapi.yml"
   ],
   "outputs": [
     "mlflow-artifacts-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mlflow-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "mlflow-artifacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mlflow-experiments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mlflow-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mlflow-model-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mlflow-registered-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mlflow-runs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
