@@ -163,6 +163,9 @@ apis:
   - type: OpenAPI
     url: openapi/mlflow-runs-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/mlflow-capability-edges.yml
+    name: MLflow Business Capability Map
   - type: IssueTracker
     url: https://github.com/mlflow/mlflow/issues
   - type: Releases
