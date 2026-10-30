@@ -1,4 +1,4 @@
-# MLflow (mlflow)
+# MLflow
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,80 +66,126 @@
 
 MLflow is an Apache 2.0 open-source platform for the end-to-end ML and GenAI lifecycle: tracking, model registry, deployment, evaluation, traces, prompts, and GenAI gateway. The tracking server exposes a REST API under `/api/2.0/mlflow`.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/mlflow/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/mlflow/refs/heads/main/apis.yml)
+**Areas:** Machine Learning · MLOps · Generative AI · Experiment Tracking · Open Source
 
-## Tags
+## MLflow on APIs.io
 
-- ML
-- MLOps
-- GenAI
-- Experiment Tracking
-- Open Source
+Everything profiled for MLflow is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mlflow/](https://apis.io/providers/mlflow/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [MLflow REST API](https://apis.io/apis/mlflow/mlflow-tracking-rest-api/) — The MLflow tracking server exposes a REST API for experiments, runs, parameters, metrics, tags, registered models, model versions, model aliases, and…
+- [MLflow AI Gateway API](https://apis.io/apis/mlflow/mlflow-gateway-api/) — The MLflow AI Gateway provides a unified HTTP interface to LLM providers with routing, rate-limiting, and secret management features.
+- [MLflow Artifacts API](https://apis.io/apis/mlflow/mlflow-artifacts-api/) — List and obtain presigned URLs for run artifacts.
+- [MLflow Experiments API](https://apis.io/apis/mlflow/mlflow-experiments-api/) — Manage MLflow experiments.
+- [MLflow Metrics API](https://apis.io/apis/mlflow/mlflow-metrics-api/) — Log and retrieve metric history for runs.
+- [MLflow Model Versions API](https://apis.io/apis/mlflow/mlflow-model-versions-api/) — Manage versions of registered models.
+- [MLflow Registered Models API](https://apis.io/apis/mlflow/mlflow-registered-models-api/) — Manage registered models in the MLflow Model Registry.
+- [MLflow Runs API](https://apis.io/apis/mlflow/mlflow-runs-api/) — Create and manage runs within an experiment.
 
-## APIs
+### Published properties
 
-### MLflow REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The MLflow tracking server exposes a REST API for experiments, runs, parameters, metrics, tags, registered models, model versions, model aliases, and artifacts, plus newer endpoints for traces, prompts, datasets, and the AI gateway. POST requests use `application/json`. Pagination via `max_results` / `page_token`. Authentication is deployment-specific (basic auth, OIDC, or none).
+#### Agentic access (1)
 
-- **Human URL:** [https://mlflow.org/docs/latest/rest-api.html](https://mlflow.org/docs/latest/rest-api.html)
-- **Base URL:** `http://{tracking_server}/api/2.0/mlflow`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Mlflow Agentic Access](https://apis.io/agentic-access/mlflow/mlflow-agentic-access/)
 
-- REST
-- Experiments
-- Runs
-- Model Registry
-- Artifacts
+#### Collections (7)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://mlflow.org/docs/latest/rest-api.html)
-- [SDK](https://mlflow.org/docs/latest/python_api/index.html)
-- [SDK](https://mlflow.org/docs/latest/java_api/index.html)
-- [SDK](https://mlflow.org/docs/latest/R-api.html)
-- [Postman Collection](collections/mlflow.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/mlflow.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [MLflow Tracking REST API](https://apis.io/collections/mlflow/open-mlflow/)
+- [MLflow Tracking REST Artifacts API](https://apis.io/collections/mlflow/open-mlflow-artifacts-api/)
+- [MLflow Tracking REST Artifacts Experiments API](https://apis.io/collections/mlflow/open-mlflow-experiments-api/)
+- [MLflow Tracking REST Artifacts Metrics API](https://apis.io/collections/mlflow/open-mlflow-metrics-api/)
+- [MLflow Tracking REST Artifacts Model Versions API](https://apis.io/collections/mlflow/open-mlflow-model-versions-api/)
+- [MLflow Tracking REST Artifacts Registered Models API](https://apis.io/collections/mlflow/open-mlflow-registered-models-api/)
+- [MLflow Tracking REST Artifacts Runs API](https://apis.io/collections/mlflow/open-mlflow-runs-api/)
 
-### MLflow AI Gateway API
+#### Security (2)
 
-The MLflow AI Gateway provides a unified HTTP interface to LLM providers with routing, rate-limiting, and secret management features.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://mlflow.org/docs/latest/llms/gateway/index.html](https://mlflow.org/docs/latest/llms/gateway/index.html)
-- **Base URL:** `http://{gateway}/gateway`
+- [Mlflow Authentication](https://apis.io/security/mlflow/mlflow-authentication/)
+- [Mlflow Domain Security](https://apis.io/security/mlflow/mlflow-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- GenAI
-- LLM Gateway
-- REST
+Published plans, tiers and prices.
 
-#### Properties
+- [Mlflow Plans Pricing](https://apis.io/plans/mlflow/mlflow-plans-pricing/)
 
-- [Documentation](https://mlflow.org/docs/latest/llms/gateway/index.html)
-- [Postman Collection](collections/mlflow.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/mlflow.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-## Common Properties
+Published request limits.
 
-- [LinkedIn](https://www.linkedin.com/company/mlflow-org)
+- [Mlflow Rate Limits](https://apis.io/rate-limits/mlflow/mlflow-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Mlflow Finops](https://apis.io/finops/mlflow/mlflow-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://mlflow.org/)
-- [Portal](https://mlflow.org/docs/latest/)
-- [Source Code](https://github.com/mlflow/mlflow)
-- [License](https://github.com/mlflow/mlflow/blob/master/LICENSE.txt)
-- [Commercial Offering](https://www.databricks.com/product/managed-mlflow)
-- [Plans](plans/mlflow-plans-pricing.yml)
-- [Rate Limits](rate-limits/mlflow-rate-limits.yml)
-- [Fin Ops](finops/mlflow-finops.yml)
-- [L L Ms Txt](https://mlflow.org/llms.txt)
+- [Blog](https://mlflow.org/blog/rss.xml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 40.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mlflow/](https://apis.io/providers/mlflow/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MLflow: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mlflow/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
